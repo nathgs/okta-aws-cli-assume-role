@@ -1,20 +1,31 @@
 *.class
-
-# Package Files #
 *.war
 *.ear
-
-# jar folder
 META-INF
-
 out/config.properties
-
 lib/aws-java-sdk-1.10.71.jar
-
 lib/aws-java-sdk-1.10.74.jar
-
 lib/aws-java-sdk-1.11.37.jar
-
 .idea/workspace.xml
-
 target/classes/log4j2.xml
+\.orig$
+\.orig\..*$
+\.chg\..*$
+\.rej$
+\.conflict\~$
+^build$
+^dist$
+^nbproject/private$
+^src/conf/wsdl$
+^junit.*
+syntax: glob
+target/*
+*/target/*
+.settings/*
+.project
+.classpath
+scheduledreporting-ejb/test-output/*
+*.iml
+dependency-reduced-pom.xml
+**/.idea/*
+*.versionsBackup

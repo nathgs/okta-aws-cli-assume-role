@@ -1,4 +1,18 @@
-# Okta AWS-CLI Tool
+# Okta AWS-CLI Tool (customized to EROAD)
+
+The Okta AWS-CLI Tool allows Okta customers to take advantage of [Okta](www.okta.com) to use the [AWS Command Line Interface](https://aws.amazon.com/cli) without relying on permanent AWS keys. More specifically, it allows them to generate temporary 60-minute keys
+that are stored for each profile in the ```~/.aws/credentials``` file. Additionally, if the AWS environment is leveraging cross-account roles and the AssumeRole AWS function, the tool will be able to detect that you choose
+to assume a cross-account role and will be able to extract the actual role in the target account as well as add an additional profile line the ```~/.aws/config``` file.
+
+## Simple Guide (if you don't want to read the whole README file)
+- Download the source code
+- `mvn clean install`
+- `cd target/`
+- `cp ../src/main/java/com/okta/tools/config.properties .`
+- `java -jar okta-awscli-jar-with-dependencies.jar`
+- Follow the instructions in the console
+
+## Full README
 
 This readme file is an excerpt of the [Okta-AWS Integration Guide](https://support.okta.com/help/articles/Knowledge_Article/Amazon-Web-Services-and-Okta-Integration-Guide). We highly recommend that you first read it to understand how Okta and AWS integrate with each other.
 
@@ -11,7 +25,6 @@ You can now use this tool with the cross-account role architecture recommended i
 ##### Important note
 
 The AWS-CLI tool currently only supports single-statement policies, i.e. policies with one single AssumeRole action (pointing to a role in a separate account). Additionally, the tool only supports managed policies. Support for inline policies is planned in the near future.
-
 
 The Okta AWS-CLI Tool allows Okta customers to take advantage of [Okta](www.okta.com) to use the [AWS Command Line Interface](https://aws.amazon.com/cli) without relying on permanent AWS keys. More specifically, it allows them to generate temporary 60-minute keys
 that are stored for each profile in the ```~/.aws/credentials``` file. Additionally, if the AWS environment is leveraging cross-account roles and the AssumeRole AWS function, the tool will be able to detect that you choose
